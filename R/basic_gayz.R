@@ -95,9 +95,6 @@ basic_gayz <- function(abstract_text, pattern = c(), replacement = c()) {
                                               sample(plural_replace, 1))
   }
 
-  print(plural_search)
-  print(plural_replace)
-
   return(abstract_text)
 
 }
