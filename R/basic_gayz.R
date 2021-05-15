@@ -20,49 +20,79 @@
 #'
 #' basic_gayz(abstract_text, pattern = c("participant", "observation"), replacement = "queen")
 basic_gayz <- function(abstract_text, pattern = c(), replacement = c()) {
-  # make useful defaults to find common individuals
+  # make useful defaults to find common units of observation
+  # start with easy words if none are provided
   if (length(pattern) == 0) {
-    single_search <- c("participant", "subject", "patient", "voter",
-                       "individual", "human", "employee", "supervisor",
-                       "manager", "human being", "student", "teacher",
-                       "respondent", "panelist", "adult", "adolescent",
-                       "worker", "player", "actor", "observation")
+    simple_single_search <- c("participant", "subject", "patient", "voter",
+                              "individual", "human", "employee", "supervisor",
+                              "manager", "human being", "student", "teacher",
+                              "respondent", "panelist", "adult", "adolescent",
+                              "worker", "player", "actor", "observation")
   } else {
-    single_search <- pattern
+    simple_single_search <- pattern
   }
 
   complex_single_search <- c("child", "person", "man", "woman")
 
+  single_search <- append(simple_single_search, complex_single_search)
+
+  for (ix in 1:length(single_search)) {
+    single_search[ix] <- paste0(single_search[ix], " ")
+  }
+
+  simple_plural_search <- vector(mode="character", length(simple_single_search))
+
+  for (ix in 1:length(simple_single_search)) {
+    simple_plural_search[ix] <- paste0(simple_single_search[ix], "s")
+  }
+
   complex_plural_search <- c("children", "people", "men", "women")
 
+  plural_search <- append(simple_plural_search, complex_plural_search)
+
   if (length(replacement) == 0) {
-    single_replace <- c("bestie", "girlie", "queen", "kween", "girl", "babe")
+    simple_single_replace <- c("bestie", "girlie", "queen", "kween",
+                               "girl", "babe", "mama")
   } else {
-    single_replace <- replacement
+    simple_single_replace <- replacement
   }
 
-  plural_replace <- vector()
+  complex_single_replace <- c("henny", "hunty", "girlboss", "barb")
 
-  for (word in single_replace) {
-    plural_replace <- append(plural_replace, paste0(word, "s"))
+  single_replace <- append(simple_single_replace, complex_single_replace)
+
+  plural_replace <- vector(mode="character", length(simple_single_replace))
+
+  for (ix in 1:length(simple_single_replace)) {
+    plural_replace[ix] <- paste0(plural_replace[ix], "s")
   }
 
-  complex_single_replace <- c("henny", "hunty")
+  complex_plural_replace <- c("hennies", "hunties", "girlbosses", "barbz")
+
+  plural_replace <- append(plural_replace, complex_plural_replace)
+
+  # first search for singular nouns + replace with singular nouns
+  # include title-case handling to catch instances where word is first
+  # in a sentence
 
   for (word in single_search) {
-    if (stringr::str_detect(abstract_text, word)) {
-      abstract_text <- stringr::str_replace_all(abstract_text,
-                                                word,
-                                                sample(single_replace, 1))
-    }
+    abstract_text <- stringr::str_replace_all(abstract_text,
+                                              word,
+                                              sample(single_replace, 1))
+    abstract_text <- stringr::str_replace_all(abstract_text,
+                                              stringr::str_to_title(word),
+                                              sample(single_replace, 1))
   }
 
-  for (word in complex_single_search) {
-    if (stringr::str_detect(abstract_text, word)) {
-      abstract_text <- stringr::str_replace_all(abstract_text,
-                                                word,
-                                                sample(single_replace, 1))
-    }
+  # then search for plural nouns + replace with plural nouns
+
+  for (word in plural_search) {
+    abstract_text <- stringr::str_replace_all(abstract_text,
+                                              word,
+                                              sample(plural_replace, 1))
+    abstract_text <- stringr::str_replace_all(abstract_text,
+                                              stringr::str_to_title(word),
+                                              sample(plural_replace, 1))
   }
 
   return(abstract_text)
