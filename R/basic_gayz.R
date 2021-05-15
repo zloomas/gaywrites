@@ -64,7 +64,7 @@ basic_gayz <- function(abstract_text, pattern = c(), replacement = c()) {
   plural_replace <- vector(mode="character", length(simple_single_replace))
 
   for (ix in 1:length(simple_single_replace)) {
-    plural_replace[ix] <- paste0(plural_replace[ix], "s")
+    plural_replace[ix] <- paste0(simple_single_replace[ix], "s")
   }
 
   complex_plural_replace <- c("hennies", "hunties", "girlbosses", "barbz")
@@ -94,6 +94,9 @@ basic_gayz <- function(abstract_text, pattern = c(), replacement = c()) {
                                               stringr::str_to_title(word),
                                               sample(plural_replace, 1))
   }
+
+  print(plural_search)
+  print(plural_replace)
 
   return(abstract_text)
 
