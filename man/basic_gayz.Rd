@@ -11,7 +11,7 @@ basic_gayz(abstract_text, pattern = c(), replacement = c())
 
 \item{pattern}{A singular noun or vector of singular nouns to search for. Defaults to vector of common units of observation in SBS research, e.g., participant, individual, etc.}
 
-\item{replacement}{A singular noun or vector of singular nouns to use as replacements. Defaults to vector of gay nonsense}
+\item{replacement}{A singular noun or vector of singular nouns to use as replacements. Defaults to vector of common gay nonsense.}
 }
 \value{
 A gay(er) abstract
