@@ -32,42 +32,46 @@ basic_gayz <- function(abstract_text, pattern = c(), replacement = c()) {
     simple_single_search <- pattern
   }
 
-  complex_single_search <- c("child", "person", "man", "woman")
+  complex_single_search <- c(" child ", " person ", " man ", " woman ")
 
   single_search <- append(simple_single_search, complex_single_search)
 
   for (ix in 1:length(single_search)) {
-    single_search[ix] <- paste0(single_search[ix], " ")
+    single_search[ix] <- paste0(" ", single_search[ix], " ")
   }
 
   simple_plural_search <- vector(mode="character", length(simple_single_search))
 
   for (ix in 1:length(simple_single_search)) {
-    simple_plural_search[ix] <- paste0(simple_single_search[ix], "s")
+    simple_plural_search[ix] <- paste0(" ", simple_single_search[ix], "s ")
   }
 
-  complex_plural_search <- c("children", "people", "men", "women")
+  complex_plural_search <- c(" children ", " people ", " men ", " women ")
 
   plural_search <- append(simple_plural_search, complex_plural_search)
 
   if (length(replacement) == 0) {
     simple_single_replace <- c("bestie", "girlie", "queen", "kween",
-                               "girl", "babe", "mama")
+                               "babe", "mama")
   } else {
     simple_single_replace <- replacement
   }
 
-  complex_single_replace <- c("henny", "hunty", "girlboss", "barb")
+  complex_single_replace <- c(" henny ", " hunty ", " girlboss ", " barb ")
 
   single_replace <- append(simple_single_replace, complex_single_replace)
+
+  for (ix in 1:length(single_replace)) {
+    single_replace[ix] <- paste0(" ", single_replace[ix], " ")
+  }
 
   plural_replace <- vector(mode="character", length(simple_single_replace))
 
   for (ix in 1:length(simple_single_replace)) {
-    plural_replace[ix] <- paste0(simple_single_replace[ix], "s")
+    plural_replace[ix] <- paste0(" ", simple_single_replace[ix], "s ")
   }
 
-  complex_plural_replace <- c("hennies", "hunties", "girlbosses", "barbz")
+  complex_plural_replace <- c(" hennies ", " hunties ", " girlbosses ", " barbz ")
 
   plural_replace <- append(plural_replace, complex_plural_replace)
 
@@ -81,7 +85,7 @@ basic_gayz <- function(abstract_text, pattern = c(), replacement = c()) {
                                               sample(single_replace, 1))
     abstract_text <- stringr::str_replace_all(abstract_text,
                                               stringr::str_to_title(word),
-                                              sample(single_replace, 1))
+                                              stringr::str_to_title(sample(single_replace, 1)))
   }
 
   # then search for plural nouns + replace with plural nouns
@@ -92,7 +96,7 @@ basic_gayz <- function(abstract_text, pattern = c(), replacement = c()) {
                                               sample(plural_replace, 1))
     abstract_text <- stringr::str_replace_all(abstract_text,
                                               stringr::str_to_title(word),
-                                              sample(plural_replace, 1))
+                                              stringr::str_to_title(sample(plural_replace, 1)))
   }
 
   return(abstract_text)
