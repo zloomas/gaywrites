@@ -22,7 +22,7 @@ A gay(er) abstract
 Replace common text from social-science abstracts with gay nonsense.
 }
 \examples{
-abstract_text <- "75 participants were recruited, of which
+abstract_text <- "75 participants were recruited. However,
 8 individuals failed attention checks, resulting in an
 analytic sample of 63 observations."
 
