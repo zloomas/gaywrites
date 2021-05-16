@@ -4,15 +4,13 @@ output: github_document
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r, include = FALSE}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
-
-options(width=60)
 ```
 
 # gaywrites
@@ -27,7 +25,7 @@ bit gayer.
 
 You can install `gaywrites` like so:
 
-```{r}
+```{r install}
 # devtools::install_github("zloomas/gaywrites")
 ```
 
@@ -37,18 +35,32 @@ This is a basic example which shows you how to make gay modifications to a
 typical academic abstract from a social-behavioral science article. Consider
 the example below from Laliberte, Yim, Stone, and Dennis (2021):
 
+*A primary challenge for alibi-generation research is establishing the ground truth of real-world events of interest. In the current study, we used a smartphone app to record data on adult participants (N = 51) for a month prior to a memory test. The app captured accelerometry data, GPS locations, and audio environments every 10 min. After a week-long retention interval, we asked participants to identify where they were at a given time from among four alternatives. Participants were incorrect 36% of the time. Furthermore, our forced-choice procedure allowed us to conduct a conditional logit analysis to assess the different aspects of the events that the participants experienced and their relative importance to the decision process. We found strong evidence that participants confuse days across weeks. In addition, people often confused weeks in general and also hours across days. Similarity of location induced more errors than similarity of audio environments or movement types.*
+
 ```{r example}
 library(gaywrites)
 
 # text from above
 abstract_text <- "A primary challenge for alibi-generation research is establishing the ground truth of real-world events of interest. In the current study, we used a smartphone app to record data on adult participants (N = 51) for a month prior to a memory test. The app captured accelerometry data, GPS locations, and audio environments every 10 min. After a week-long retention interval, we asked participants to identify where they were at a given time from among four alternatives. Participants were incorrect 36% of the time. Furthermore, our forced-choice procedure allowed us to conduct a conditional logit analysis to assess the different aspects of the events that the participants experienced and their relative importance to the decision process. We found strong evidence that participants confuse days across weeks. In addition, people often confused weeks in general and also hours across days. Similarity of location induced more errors than similarity of audio environments or movement types."
 
-basic_gayz(abstract_text)
+example1 <- basic_gayz(abstract_text)
 
-basic_gayz(abstract_text, replacement = "girlie")
+example2 <- basic_gayz(abstract_text, replacement = "girlie")
 
-basic_gayz(abstract_text, pattern = "participant", replacement = c("bestie", "girlie"))
+example3 <- basic_gayz(abstract_text, pattern = "participant", replacement = c("bestie", "girlie"))
 ```
+
+##### Without specifying search pattern or replacements: 
+
+*`r example1`*
+
+##### Specifying just one replacement term: 
+
+*`r example2`*
+
+##### Specifying one search term with various replacement terms: 
+
+*`r example3`*
 
 ## Upcoming
 * Handle search/replace instances at the end of a sentence.
