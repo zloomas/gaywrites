@@ -17,6 +17,8 @@
 #'
 #' basic_gayz(abstract_text)
 #'
+#' basic_gayz(abstract_text, gayer = TRUE)
+#'
 #' basic_gayz(abstract_text, replacement = "queen")
 #'
 #' basic_gayz(abstract_text, pattern = c("participant", "observation"), replacement = "queen")
@@ -179,6 +181,22 @@ basic_gayz <- function(abstract_text, pattern=c(), replacement=c(), gayer=FALSE)
     abstract_text <- paste(sample(start_opts, 1), abstract_text)
 
     abstract_text <- paste(abstract_text, sample(end_opts, 1))
+
+    # handle transitions
+
+    abstract_text <- stringr::str_replace(abstract_text,
+                                          "however|surprisingly",
+                                          "the gag is")
+
+    abstract_text <- stringr::str_replace(abstract_text,
+                                          "However|Surprisingly",
+                                          "The gag is")
+
+    # simple replacements
+
+    abstract_text <- stringr::str_replace(abstract_text,
+                                          "significant",
+                                          sample(c("goopy", "gaggy"), 1))
 
   }
 
