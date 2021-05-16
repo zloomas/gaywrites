@@ -11,13 +11,10 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+options(width=60)
 ```
 
-```{css formatting, echo=FALSE}
-pre code {
-  white-space: pre-wrap;
-}
-```
 # gaywrites
 
 <!-- badges: start -->
@@ -57,7 +54,7 @@ basic_gayz(abstract_text, pattern = "participant", replacement = c("bestie", "gi
 * Handle search/replace instances at the end of a sentence.
 * Generalize methods to handle other parts of speech besides units of observation.
 
-## Example abstract citation
+## References
 Laliberte, E., Yim, H., Stone, B., & Dennis, S. J. (2021). The Fallacy of an
 Airtight Alibi: Understanding Human Memory for “Where” Using Experience Sampling.
 Psychological Science. 
