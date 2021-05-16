@@ -5,6 +5,7 @@
 #' @param abstract_text Academic abstract to make gay(er)
 #' @param pattern A singular noun or vector of singular nouns to search for. Defaults to vector of common units of observation in SBS research, e.g., participant, individual, etc.
 #' @param replacement A singular noun or vector of singular nouns to use as replacements. Defaults to vector of common gay nonsense.
+#' @param gayer Boolean, default FALSE. If TRUE, gives basic_gayz free reign to make various other gay changes.
 #'
 #' @return A gay(er) abstract
 #' @export
@@ -19,7 +20,7 @@
 #' basic_gayz(abstract_text, replacement = "queen")
 #'
 #' basic_gayz(abstract_text, pattern = c("participant", "observation"), replacement = "queen")
-basic_gayz <- function(abstract_text, pattern = c(), replacement = c()) {
+basic_gayz <- function(abstract_text, pattern, replacement, gayer=FALSE) {
   # make useful defaults to find common units of observation
   # start with easy words if none are provided
   if (length(pattern) == 0) {
@@ -61,7 +62,7 @@ basic_gayz <- function(abstract_text, pattern = c(), replacement = c()) {
   if (length(replacement) == 0) {
 
     simple_single_replace <- c("bestie", "girlie", "queen", "kween",
-                               "babe", "mama")
+                               "babe", "mama", "diva")
 
     complex_single_replace <- c("henny", "hunty", "girlboss", "barb")
 
@@ -135,6 +136,49 @@ basic_gayz <- function(abstract_text, pattern = c(), replacement = c()) {
                                             stringr::str_to_title(sample(plural_replace, 1)))
 
     }
+
+  }
+
+  if (gayer) {
+
+    # add padding to the start and end of the abstract
+
+    start_opts <- c("Girl, you are not gonna believe what happened.",
+                    "Ok sis, here's the tea.")
+
+    end_opts <- c("Periodt!", "And that's that on that.", "And that's tea.",
+                  "And that's what you missed on Glee.", "Can you believe?",
+                  "And now, sashay away.",
+                  'Anyway, stream "Slumber Party" on Spotify.',
+                  'Anyway, stream "MONTERO (Call Me By Your Name)" on Spotify.')
+
+    if (stringr::str_detect(abstract_text, " I ")) {
+
+      single_start_opts <- c("Hey queen, I've done it again.")
+
+      start_opts <- c(start_opts, single_start_opts)
+
+      single_end_opts <- c("And I'm just as gagged as you, sis.",
+                           "And I love that for me.")
+
+      end_opts <- append(end_opts, single_end_opts)
+
+    } else if (stringr::str_detect(abstract_text, " (w|W)e ")) {
+
+      plural_start_opts <- c("Hey queen, we've done it again.")
+
+      start_opts <- c(start_opts, plural_start_opts)
+
+      plural_end_opts <- c("And we're just as gagged as you, sis.",
+                           "And we love that for us.")
+
+      end_opts <- append(end_opts, plural_end_opts)
+
+    }
+
+    abstract_text <- paste(sample(start_opts, 1), abstract_text)
+
+    abstract_text <- paste(abstract_text, sample(end_opts, 1))
 
   }
 
