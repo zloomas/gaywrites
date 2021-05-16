@@ -48,6 +48,8 @@ example1 <- basic_gayz(abstract_text)
 example2 <- basic_gayz(abstract_text, replacement = "girlie")
 
 example3 <- basic_gayz(abstract_text, pattern = "participant", replacement = c("bestie", "girlie"))
+
+example4 <- basic_gayz(abstract_text, gayer=TRUE)
 ```
 
 ##### Without specifying search pattern or replacements: 
@@ -61,6 +63,10 @@ example3 <- basic_gayz(abstract_text, pattern = "participant", replacement = c("
 ##### Specifying one search term with various replacement terms: 
 
 *`r example3`*
+
+##### Adding gayer nonsense
+
+*`r example4`*
 
 ## Upcoming
 * Handle search/replace instances at the end of a sentence.
