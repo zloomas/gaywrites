@@ -25,8 +25,8 @@ bit gayer.
 
 You can install `gaywrites` like so:
 
-```{r install}
-# devtools::install_github("zloomas/gaywrites")
+```{r install, eval=FALSE}
+devtools::install_github("zloomas/gaywrites")
 ```
 
 ## Example
