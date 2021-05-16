@@ -20,7 +20,7 @@
 #' basic_gayz(abstract_text, replacement = "queen")
 #'
 #' basic_gayz(abstract_text, pattern = c("participant", "observation"), replacement = "queen")
-basic_gayz <- function(abstract_text, pattern, replacement, gayer=FALSE) {
+basic_gayz <- function(abstract_text, pattern=c(), replacement=c(), gayer=FALSE) {
   # make useful defaults to find common units of observation
   # start with easy words if none are provided
   if (length(pattern) == 0) {
