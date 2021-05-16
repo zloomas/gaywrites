@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 The goal of `gaywrites` is to take academic abstracts and make them just a 
 little...y'know...
 
-![](../spongebob.jpeg)
+![](https://pbs.twimg.com/media/EKeFrp4WwAElSzm?format=jpg&name=medium)
 
 ## Installation
 
