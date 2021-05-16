@@ -4,7 +4,7 @@
 \alias{basic_gayz}
 \title{Basic gay text replacement}
 \usage{
-basic_gayz(abstract_text, pattern, replacement, gayer = FALSE)
+basic_gayz(abstract_text, pattern = c(), replacement = c(), gayer = FALSE)
 }
 \arguments{
 \item{abstract_text}{Academic abstract to make gay(er)}
@@ -27,6 +27,8 @@ abstract_text <- "75 participants were recruited, of which
 analytic sample of 63 observations."
 
 basic_gayz(abstract_text)
+
+basic_gayz(abstract_text, gayer = TRUE)
 
 basic_gayz(abstract_text, replacement = "queen")
 
