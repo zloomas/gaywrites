@@ -64,7 +64,7 @@ basic_gayz <- function(abstract_text, pattern=c(), replacement=c(), gayer=FALSE)
   if (length(replacement) == 0) {
 
     simple_single_replace <- c("bestie", "girlie", "queen", "kween",
-                               "babe", "mama", "diva")
+                               "babe", "mama", "mawma", "diva")
 
     complex_single_replace <- c("henny", "hunty", "girlboss", "barb")
 
@@ -150,24 +150,27 @@ basic_gayz <- function(abstract_text, pattern=c(), replacement=c(), gayer=FALSE)
 
     end_opts <- c("Periodt!", "And that's that on that.", "And that's tea.",
                   "And that's what you missed on Glee.", "Can you believe?",
-                  "And now, sashay away.",
+                  "And now, sashay away.", "Wig teleported to Mars!",
                   'Anyway, stream "Slumber Party" on Spotify.',
                   'Anyway, stream "MONTERO (Call Me By Your Name)" on Spotify.')
 
     if (stringr::str_detect(abstract_text, " I ")) {
 
-      single_start_opts <- c("Hey queen, I've done it again.")
+      single_start_opts <- c("Hey queen, I've done it again.",
+                             "I'm serving science the house down boots.")
 
       start_opts <- c(start_opts, single_start_opts)
 
       single_end_opts <- c("And I'm just as gagged as you, sis.",
-                           "And I love that for me.")
+                           "And I love that for me.",
+                           "I know, wig, right? I felt that.")
 
       end_opts <- append(end_opts, single_end_opts)
 
     } else if (stringr::str_detect(abstract_text, " (w|W)e ")) {
 
-      plural_start_opts <- c("Hey queen, we've done it again.")
+      plural_start_opts <- c("Hey queen, we've done it again.",
+                             "We're serving science the house down boots.")
 
       start_opts <- c(start_opts, plural_start_opts)
 
@@ -205,7 +208,8 @@ basic_gayz <- function(abstract_text, pattern=c(), replacement=c(), gayer=FALSE)
       results_search[ix] <- paste0(" ", results_search[ix], " ")
     }
 
-    results_replace <- c("goopy", "gaggy", "iconic", "legendary", "skinny")
+    results_replace <- c("goopy", "gaggy", "iconic", "legendary", "skinny",
+                         "wiggy")
 
     for (ix in 1:length(results_replace)) {
       results_replace[ix] <- paste0(" ", results_replace[ix], " ")
