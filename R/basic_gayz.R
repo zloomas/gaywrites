@@ -69,7 +69,7 @@ basic_gayz <- function(abstract_text, pattern=c(), replacement=c(), gayer=FALSE)
     complex_single_replace <- c("henny", "hunty", "girlboss", "barb")
 
     complex_plural_replace <- c(" hennies ", " hunties ", " girlbosses ",
-                                " barbz ")
+                                " barbz ", " theydies ")
 
   } else {
 
@@ -185,18 +185,34 @@ basic_gayz <- function(abstract_text, pattern=c(), replacement=c(), gayer=FALSE)
     # handle transitions
 
     abstract_text <- stringr::str_replace(abstract_text,
-                                          "however|surprisingly",
-                                          "the gag is")
-
-    abstract_text <- stringr::str_replace(abstract_text,
                                           "However|Surprisingly",
                                           "The gag is")
 
-    # simple replacements
+    # results qualifiers
 
-    abstract_text <- stringr::str_replace(abstract_text,
-                                          "significant",
-                                          sample(c("goopy", "gaggy"), 1))
+    results_search <- c("significant", "positive", "negative", "strong",
+                        "moderate", "weak")
+
+    for (ix in 1:length(results_search)) {
+      results_search[ix] <- paste0(" ", results_search[ix], " ")
+    }
+
+    results_replace <- c("goopy", "gaggy", "iconic", "legendary", "skinny")
+
+    for (ix in 1:length(results_replace)) {
+      results_replace[ix] <- paste0(" ", results_replace[ix], " ")
+    }
+
+    for (word in results_search) {
+
+      while(stringr::str_detect(abstract_text, word)) {
+
+        abstract_text <- stringr::str_replace(abstract_text,
+                                              word,
+                                              sample(results_replace, 1))
+
+      }
+    }
 
   }
 
