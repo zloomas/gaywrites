@@ -7,7 +7,9 @@
 <!-- badges: end -->
 
 The goal of `gaywrites` is to take academic abstracts and make them just
-a little bit gayer.
+a little…y’know…
+
+![](./misc/spongebob.jpeg)
 
 ## Installation
 
@@ -59,18 +61,18 @@ example4 <- basic_gayz(abstract_text, gayer=TRUE)
 
 *A primary challenge for alibi-generation research is establishing the
 ground truth of real-world events of interest. In the current study, we
-used a smartphone app to record data on queen divas (N = 51) for a month
-prior to a memory test. The app captured accelerometry data, GPS
+used a smartphone app to record data on hunty girlies (N = 51) for a
+month prior to a memory test. The app captured accelerometry data, GPS
 locations, and audio environments every 10 min. After a week-long
 retention interval, we asked besties to identify where they were at a
-given time from among four alternatives. Girlbosses were incorrect 36%
-of the time. Furthermore, our forced-choice procedure allowed us to
-conduct a conditional logit analysis to assess the different aspects of
-the events that the kweens experienced and their relative importance to
-the decision process. We found strong evidence that babes confuse days
-across weeks. In addition, theydies often confused weeks in general and
-also hours across days. Similarity of location induced more errors than
-similarity of audio environments or movement types.*
+given time from among four alternatives. Divas were incorrect 36% of the
+time. Furthermore, our forced-choice procedure allowed us to conduct a
+conditional logit analysis to assess the different aspects of the events
+that the divas experienced and their relative importance to the decision
+process. We found strong evidence that babes confuse days across weeks.
+In addition, kweens often confused weeks in general and also hours
+across days. Similarity of location induced more errors than similarity
+of audio environments or movement types.*
 
 ##### Specifying just one replacement term:
 
@@ -93,14 +95,14 @@ similarity of audio environments or movement types.*
 
 *A primary challenge for alibi-generation research is establishing the
 ground truth of real-world events of interest. In the current study, we
-used a smartphone app to record data on adult girlies (N = 51) for a
+used a smartphone app to record data on adult besties (N = 51) for a
 month prior to a memory test. The app captured accelerometry data, GPS
 locations, and audio environments every 10 min. After a week-long
 retention interval, we asked girlies to identify where they were at a
 given time from among four alternatives. Girlies were incorrect 36% of
 the time. Furthermore, our forced-choice procedure allowed us to conduct
 a conditional logit analysis to assess the different aspects of the
-events that the girlies experienced and their relative importance to the
+events that the besties experienced and their relative importance to the
 decision process. We found strong evidence that besties confuse days
 across weeks. In addition, people often confused weeks in general and
 also hours across days. Similarity of location induced more errors than
@@ -108,19 +110,19 @@ similarity of audio environments or movement types.*
 
 ##### Adding gayer nonsense
 
-*Girl, you are not gonna believe what happened. A primary challenge for
+*Hey queen, we’ve done it again. A primary challenge for
 alibi-generation research is establishing the ground truth of real-world
 events of interest. In the current study, we used a smartphone app to
-record data on diva queens (N = 51) for a month prior to a memory test.
+record data on henny babes (N = 51) for a month prior to a memory test.
 The app captured accelerometry data, GPS locations, and audio
 environments every 10 min. After a week-long retention interval, we
-asked girlies to identify where they were at a given time from among
-four alternatives. Queens were incorrect 36% of the time. The gag is,
-our forced-choice procedure allowed us to conduct a conditional logit
-analysis to assess the different aspects of the events that the girlies
+asked babes to identify where they were at a given time from among four
+alternatives. Theydies were incorrect 36% of the time. The gag is, our
+forced-choice procedure allowed us to conduct a conditional logit
+analysis to assess the different aspects of the events that the kweens
 experienced and their relative importance to the decision process. We
-found skinny evidence that besties confuse days across weeks. In
-addition, divas often confused weeks in general and also hours across
+found gaggy evidence that hunties confuse days across weeks. In
+addition, girlies often confused weeks in general and also hours across
 days. Similarity of location induced more errors than similarity of
 audio environments or movement types. And that’s tea.*
 

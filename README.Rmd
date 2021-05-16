@@ -18,8 +18,10 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of `gaywrites` is to take academic abstracts and make them just a little
-bit gayer.
+The goal of `gaywrites` is to take academic abstracts and make them just a 
+little...y'know...
+
+![](./misc/spongebob.jpeg)
 
 ## Installation
 
