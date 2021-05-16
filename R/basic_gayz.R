@@ -184,8 +184,16 @@ basic_gayz <- function(abstract_text, pattern=c(), replacement=c(), gayer=FALSE)
 
     # handle transitions
 
+    # misc. adverbs, but just change one of them
+
+    however_search <- c("However", "Surprisingly", "Unexpectedly", "Notably",
+                        "Importantly", "Furthermore", "Further", "In addition",
+                        "Additionally", "Moreover")
+
+    however_search <- paste(however_search, collapse="|")
+
     abstract_text <- stringr::str_replace(abstract_text,
-                                          "However|Surprisingly",
+                                          however_search,
                                           "The gag is")
 
     # results qualifiers
@@ -212,6 +220,7 @@ basic_gayz <- function(abstract_text, pattern=c(), replacement=c(), gayer=FALSE)
                                               sample(results_replace, 1))
 
       }
+
     }
 
   }
